@@ -1,0 +1,5 @@
+# Site volontairement non référencé pour le moment.
+# Chaque page porte une balise <meta name="robots" content="noindex"> :
+# les moteurs doivent pouvoir lire les pages pour la voir, d'où Allow.
+User-agent: *
+Allow: /

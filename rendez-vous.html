@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="fr" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>document.documentElement.className = 'js';</script>
+  <title>Demander un rendez-vous · Synthérapies Beynost</title>
+  <meta name="description" content="Envoyez une demande de rendez-vous à Janis Maciocia, Synthérapies, à Beynost, sur la Côtière de l'Ain.">
+  <!-- Site non référencé pour le moment : retirer cette ligne pour autoriser les moteurs de recherche -->
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <meta property="og:title" content="Demander un rendez-vous · Synthérapies Beynost">
+  <meta property="og:description" content="Envoyez une demande de rendez-vous à Janis Maciocia, Synthérapies, à Beynost, sur la Côtière de l'Ain.">
+  <meta property="og:image" content="assets/img/logo-complet.jpg">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta name="theme-color" content="#f9f6ef">
+  <link rel="icon" type="image/png" href="assets/img/favicon.png">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&family=Dancing+Script:wght@500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="index.html" aria-label="Synthérapies, accueil">
+        <img src="assets/img/enso.png" alt="" width="38" height="38">
+        <span>Synthérapies</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav">Menu</button>
+      <nav class="nav" id="nav" aria-label="Navigation principale">
+        <ul>
+          <li><a href="approche.html">Déroulement d'une séance</a></li>
+          <li><a href="a-propos.html">Votre praticien</a></li>
+          <li><a href="tarifs.html">Tarifs</a></li>
+          <li><a href="faq.html">Questions</a></li>
+          <li><a class="btn" href="rendez-vous.html" aria-current="page">Demander un rendez-vous</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenu">
+    <header class="page-intro">
+      <div class="wrap">
+        <p class="crumb">Rendez-vous</p>
+        <h1>Demander un rendez-vous</h1>
+        <p class="lead">Indiquez vos coordonnées et les moments qui vous conviennent. Je vous recontacte pour convenir ensemble d'un créneau.</p>
+      </div>
+    </header>
+
+    <section class="section-tight">
+      <div class="wrap booking">
+        <form id="demande" class="form" action="https://api.web3forms.com/submit" method="POST" novalidate>
+          <!-- Clé d'accès Web3Forms (publique par conception : elle sert seulement à envoyer les demandes vers l'e-mail du cabinet) -->
+          <input type="hidden" name="access_key" value="513e7839-428f-4b8b-8b38-4eaecef23865">
+          <input type="hidden" name="subject" value="Nouvelle demande de rendez-vous · Synthérapies">
+          <input type="hidden" name="from_name" value="Site Synthérapies">
+          <input type="checkbox" name="botcheck" class="visually-hidden" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+          <div class="form-row">
+            <div class="field">
+              <label for="nom">Prénom et nom <span class="req" aria-hidden="true">*</span></label>
+              <input id="nom" name="Nom" type="text" autocomplete="name" required aria-describedby="nom-error" data-error="Indiquez votre prénom et votre nom.">
+              <span class="field-error" id="nom-error" aria-live="polite"></span>
+            </div>
+            <div class="field">
+              <label for="tel">Téléphone <span class="req" aria-hidden="true">*</span></label>
+              <input id="tel" name="Téléphone" type="tel" autocomplete="tel" inputmode="tel" required aria-describedby="tel-error" data-error="Indiquez un numéro pour que je puisse vous rappeler.">
+              <span class="field-error" id="tel-error" aria-live="polite"></span>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="email">E-mail <span class="req" aria-hidden="true">*</span></label>
+            <input id="email" name="email" type="email" autocomplete="email" required aria-describedby="email-error" data-error="Indiquez une adresse e-mail valide.">
+            <span class="field-error" id="email-error" aria-live="polite"></span>
+          </div>
+
+          <div class="field">
+            <label for="formule">Formule souhaitée</label>
+            <select id="formule" name="Formule">
+              <option data-key="premiere">Première séance · 1 h 30 · 80&nbsp;€</option>
+              <option data-key="suivi">Séance de suivi · 1 h · 70&nbsp;€</option>
+              <option data-key="mineur">Séance pour mineur · 45 min · 55&nbsp;€</option>
+              <option data-key="conseil">Je ne sais pas encore</option>
+            </select>
+          </div>
+
+          <fieldset class="field">
+            <legend>Moments qui vous conviennent</legend>
+            <div class="choices">
+              <label class="choice"><input type="checkbox" name="moments" value="Matin"><span>Matin</span></label>
+              <label class="choice"><input type="checkbox" name="moments" value="Midi"><span>Midi</span></label>
+              <label class="choice"><input type="checkbox" name="moments" value="Après-midi"><span>Après-midi</span></label>
+              <label class="choice"><input type="checkbox" name="moments" value="Fin de journée"><span>Fin de journée</span></label>
+            </div>
+          </fieldset>
+
+          <div class="field">
+            <label for="jours">Jours ou précisions <span class="hint">(facultatif)</span></label>
+            <input id="jours" name="Jours ou précisions" type="text" placeholder="Par exemple : plutôt le mardi ou le jeudi">
+          </div>
+
+          <div class="field">
+            <label for="message">Message <span class="hint">(facultatif)</span></label>
+            <textarea id="message" name="Message" aria-describedby="message-hint"></textarea>
+            <span class="hint" id="message-hint">Inutile de détailler votre santé ici&nbsp;: nous en parlerons de vive voix, en toute confidentialité.</span>
+          </div>
+
+          <div class="field">
+            <label class="consent">
+              <input id="consent" type="checkbox" name="Consentement" value="Oui" required aria-describedby="consent-error" data-error="Votre accord est nécessaire pour que je puisse vous recontacter.">
+              <span>J'accepte que ces informations soient utilisées uniquement pour me recontacter au sujet de ma demande. Elles ne sont ni cédées ni utilisées à d'autres fins.</span>
+            </label>
+            <span class="field-error" id="consent-error" aria-live="polite"></span>
+          </div>
+
+          <div class="form-status" id="form-status" role="status" aria-live="polite" hidden></div>
+
+          <div>
+            <button class="btn" type="submit">Envoyer ma demande</button>
+          </div>
+        </form>
+
+        <aside class="aside">
+          <h2>Comment ça se passe</h2>
+          <ol>
+            <li>Vous envoyez votre demande avec vos moments préférés.</li>
+            <li>Je vous recontacte par téléphone ou par e-mail pour fixer un créneau.</li>
+            <li>Vous recevez une confirmation de rendez-vous.</li>
+          </ol>
+          <h2>Le lieu de séance</h2>
+          <p class="quiet">Synthérapies, Janis Maciocia<br>Beynost (01700), Côtière de l'Ain</p>
+          <p><a class="tel" href="tel:+33627493078">06 27 49 30 78</a></p>
+          <p class="quiet small">Pour annuler ou reporter, il suffit de me prévenir le plus tôt possible.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section-tight">
+      <div class="wrap">
+        <iframe class="map" title="Carte : Beynost, Ain" src="https://www.google.com/maps?q=Beynost%2001700&amp;z=13&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-band">
+        <div>
+          <p class="footer-mark">Synthérapies</p>
+          <p>Résonance et traditions · Janis Maciocia, thérapeute à Beynost, Côtière de l'Ain</p>
+          <p><a class="tel" href="tel:+33627493078">06 27 49 30 78</a></p>
+          <p><a href="https://fr.trustpilot.com/review/syntherapies.com" target="_blank" rel="noopener">Lire les témoignages sur Trustpilot ↗<span class="visually-hidden"> (nouvel onglet)</span></a></p>
+        </div>
+        <ul class="footer-links">
+          <li><a href="approche.html">Déroulement d'une séance</a></li>
+          <li><a href="a-propos.html">Votre praticien</a></li>
+          <li><a href="tarifs.html">Tarifs</a></li>
+          <li><a href="faq.html">Questions</a></li>
+          <li><a href="rendez-vous.html">Rendez-vous</a></li>
+        </ul>
+      </div>
+      <div class="footer-legal">
+        <span>© <span id="year">2026</span> Synthérapies</span>
+        <span>Approche complémentaire&nbsp;: elle ne remplace pas un avis ou un traitement médical.</span>
+      </div>
+    </div>
+  </footer>
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>
